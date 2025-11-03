@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Long Live A$AP.</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+    /* Use Monospace space，
+    make the whole html looks like a retro command. */
+    font-family: 'Courier New', monospace; 
+    background-color: #121212; /* Dark background to enhance neon/glitch colors */
+    color: #E0E0E0; /* Light text for readability */
+    margin: 0;
+}
+
+/* Style the header */
+header {
+ 
+    /*addsome cool chaseboard pattern.*/
+   background-image:
+    conic-gradient(#eedf10 90deg, #000 90deg 180deg, #eedf10 180deg 270deg, #000 270deg);
+    /*  use conic -gradient to implement the chaseboard,
+        deg stand for the degree,
+        on specific angle it will appear different color*/
+  
+  background-size: 100px 100px;
+  
+  
+  background-position: 0 0, 0 25px; 
+
+  /* Done. */
+    font-family: 'Courier New', monospace; 
+    padding: 50px 25px 50px 25px;
+    text-align: center;
+    font-size: 35px;
+    color: #880707;
+    /*  make a outline for the title.
+        just to make it clearer.*/
+    text-shadow:
+    2px 2px 0 #000,  
+    -2px -2px 0 #000, 
+    2px -2px 0 #000,   
+    -2px 12px 0 #000;  /* I mean to do it , just make it looks like broken.*/ 
+
+}
+
+ /*only changing the h1 title in article-container */
+
+article h2 {
+    color: #000000; /* 标题颜色：纯黑，模拟印刷油墨 */
+    font-family: 'Impact', Charcoal, sans-serif; 
+    text-transform: uppercase; /* 全部大写，增加冲击力 */
+    text-shadow: 1px 1px 0 #C00000; /* 红色微弱阴影，模拟印刷套色不准 */
+    margin-top: 0;
+    border-bottom: 3px solid #000000;
+    padding-bottom: 5px;
+}
+
+article p {
+    color: #3C3C3C; /* grey */
+    
+    /* ===== make it more retro, vintage stylle. ===== */
+    font-family: 'Courier New', monospace; 
+    size :0.5px;
+    line-height:1.3;
+    font-size:0.9em;
+
+    letter-spacing:1px;
+    color: #131212; /* Light text for readability */
+
+
+    margin: 1.5em;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+<h1>Retro experimental hiphop music sharing.</h1>
+
+<header>
+  <h2>AWGE IS COMIN' BACK SOON.</h2>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      
+      <li><a href="#">What A$AP meaning?</a></li>
+      <li><a href="#">Tokyo</a></li>
+    </ul>
+  </nav>
+
+    <article>
+    
+        <h2>Testing</h2>
+        <p>Released in 2018, A$AP Rocky’s *Testing* is arguably his most ambitious and polarizing project. True to its title, the album served as a platform for sonic experiments, moving away from conventional Trap while retaining heavy bass and psychedelic soundscapes. </p>
+        <p> </p>
+        <p>The record is built on chaos and collision, incorporating rock, Moby samples, and Grime influences, which resulted in a sprawling, yet often fragmented, vision of modern hip-hop. While inconsistent, its high points, such as "Praise The Lord," solidified Rocky's position as an avant-garde figure.</p>
+    </article>
+    
+    <article>
+        <h2>Long.Live.A$AP</h2>
+        <p>
+        Released in 2013, *Long.Live.A$AP* served as Rocky’s major-label debut, successfully translating his psychedelic Trap sound to a mainstream audience. The album maintained his Houston-influenced dark beats while showing versatility through collaborations with artists like Skrillex and Santigold.
+    </p>
+    <p>
+        Tracks like "Goldie" and "F**kin' Problems" cemented his status as a fashion-forward, yet musically grounded, star. This record was critical in establishing his reputation for blending Southern production with his New York swagger and experimental tendencies.
+        </article>
+
+    <article>
+        <h2>Don't be dumb</h2>
+        <p>
+        "Don't Be Dumb" represents more than just a song; it is the working title for A$AP Rocky’s highly anticipated, unreleased studio album. The title encapsulates his sharp, often confrontational, attitude toward the music industry and his experimental approach to his latest body of work.
+    </p>
+    <p>
+        Beyond the music, Rocky’s partnership as Creative Director for **PUMA's F1 division** solidifies his status as a key figure bridging high fashion, Hiphop, and motorsport culture. This role emphasizes his broader artistic vision, treating fashion and design with the same experimental energy as his music.
+    </p>
+        </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>
+
