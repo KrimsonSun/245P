@@ -85,19 +85,48 @@ section {
 
 /* Style the navigation menu */
 nav {
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  background: #ccc;
-  padding: 20px;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    /* Dark background, contrasting with the content area for a terminal/panel look */
+    background: #222222; 
+    padding: 20px;
+    /* Adding a thick border to emphasize the division and add digital harshness */
+    border-right: 3px solid #FF00FF; /* Magenta border */
 }
 
 /* Style the list inside the menu */
 nav ul {
-  list-style-type: none;
-  padding: 0;
+    /* Using square list style for a geometric, digital/pixel feel */
+    list-style-type: square; 
+    /* Slight padding from the left edge */
+    padding-left: 10px; 
+    /* Remove default list margin */
+    margin: 0; 
 }
 
+/* Style the navigation links */
+nav ul li a {
+    /* Neon color for links, essential for the Glitch theme */
+    color: #00FFFF; /* Bright Cyan */
+    text-decoration: none; /* Remove default underline */
+    font-weight: bold;
+    display: block; /* Make the link cover the entire list width */
+    padding: 8px 0; /* Add vertical space for clickability */
+    
+    /* Subtle Glitch Effect: text shadow for color separation (Cyan with Magenta shadow) */
+    text-shadow: 1px 1px 0 #FF00FF; 
+    
+    /* Transition for a smooth, fast digital flicker effect on hover */
+    transition: color 0.1s, text-shadow 0.1s; 
+}
+
+/* Hover effect (The actual Glitch/Flicker effect) */
+nav ul li a:hover {
+    color: #FF00FF; /* Color inversion to Magenta on hover */
+    /* Reverse the color shadow for a visual "shift" */
+    text-shadow: -2px -2px 0 #00FFFF; 
+}
 /* Style the content */
 article {
   -webkit-flex: 3;
@@ -135,8 +164,8 @@ footer {
   <nav>
     <ul>
       
-      <li><a href="#">What A$AP meaning?</a></li>
-      <li><a href="#">Tokyo</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/ASAP_Mob#Formation_and_early_beginnings_(2006%E2%80%932012)">What is A$AP?</a></li>
+      <li><a href="https://www.formula1.com/en/latest/article/ausdap-rocky-named-the-creative-director-of-puma-and-formula-1s-partnership.3f2ym3ZcsvfeT7YxaYYRMd">PUMA x A$AP: High Fashion Meets F1</a></li>
     </ul>
   </nav>
 
@@ -144,7 +173,6 @@ footer {
     
         <h2>Testing</h2>
         <p>Released in 2018, A$AP Rocky’s *Testing* is arguably his most ambitious and polarizing project. True to its title, the album served as a platform for sonic experiments, moving away from conventional Trap while retaining heavy bass and psychedelic soundscapes. </p>
-        <p> </p>
         <p>The record is built on chaos and collision, incorporating rock, Moby samples, and Grime influences, which resulted in a sprawling, yet often fragmented, vision of modern hip-hop. While inconsistent, its high points, such as "Praise The Lord," solidified Rocky's position as an avant-garde figure.</p>
     </article>
     
@@ -169,7 +197,8 @@ footer {
 </section>
 
 <footer>
-  <p>Footer</p>
+  <h2>Yammmmborgini high!</h2>
+  <p>GitHub:https://github.com/KrimsonSun/245P/tree/main/exercise1</p>
 </footer>
 
 </body>
