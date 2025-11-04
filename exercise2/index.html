@@ -63,114 +63,98 @@
       .center .inner {
         border: 2px solid blue;
       }
-      /* add/modify your css properties below this line */
+   /* add/modify your css properties below this line */
+        /* add/modify your css properties below this line */
 
-    /* add/modify your css properties below this line */
-
-/* --- Global Flex Setup for .wrapper Containers --- */
-/* This makes the pairs of boxes (.left/.right and two .center boxes) stand side-by-side */
-/* add/modify your css properties below this line */
-
-/* --- Global Flex Setup for .wrapper Containers --- */
-/* Makes the top and bottom boxes stand side-by-side */
+/* --- 0. Global Flex Setup for .wrapper Containers --- */
+/* Makes the content inside both wrappers display side-by-side (flex-direction: row) */
 .wrapper {
     display: flex;
-    /* Allows items to take up available space vertically within the wrapper */
-    align-items: stretch; 
+    /* This ensures that items like .left and .right (with different heights) align at the top */
+    align-items: flex-start; 
     width: 100%;
+    /* Override original overflow: hidden to ensure flex items behave correctly, though it's technically a modification, 
+       it's necessary for flex on the wrapper to work correctly with margins. */
+    overflow: visible; 
 }
 
-/* --- 1. Top Section: .left (Green container with Yellow inner) --- */
-/*
-   Requirement: The yellow bordered div (.left .inner) should be aligned to the right and
-   bottom of the div (.left).
+/* --- 1. Top Row (Alignment Fix) --- */
+/* REQUIREMENT: The top row (.left + .right) must be pushed right by 5% to align with the content area of the bottom row.
+   The bottom row's .center boxes have a 5% margin-left (and margin-right) from the original CSS.
+   Adding margin-left: 5% to the first item (.left) shifts the entire 90% wide block over, 
+   creating the necessary 5% left gap and achieving alignment. (5% margin + 45% + 45% = 95% used width, leaving 5% on the right).
 */
-
-/* Making .left a flex container to position its .inner child */
+.wrapper:first-child .left {
+    margin-left: 0%; /* ALIGNMENT FIX: Compensates for the bottom row's 5% left margin */
+}
+.wrapper:first-child .right {
+    margin-left: 10%; /* ALIGNMENT FIX: Compensates for the bottom row's 5% left margin */
+}
+/* --- 2. Top-Left Corner Positioning (.left - Green Box, Yellow Inner) --- */
+/* REQUIREMENT: Yellow inner box (.inner) aligned to the right and bottom of the green box (.left). */
 .left {
     display: flex;
-    /* Pushes content (.inner) to the bottom */
-    align-items: flex-end; 
-    /* Pushes content (.inner) to the right */
-    justify-content: flex-end; 
-    /* Ensure .left takes up roughly the same width as .right in the row */
-    flex-grow: 1;
+    align-items: flex-end; /* Pushes content (.inner) to the bottom (Cross Axis) */
+    justify-content: flex-end; /* Pushes content (.inner) to the right (Main Axis) */
+    flex-shrink: 0;
 }
 
-/* 1b. Align the text within the yellow bordered div */
 .left .inner {
     text-align: right;
     padding: 10px;
-    /* Use a relative width to ensure the box scales with the browser */
-    width: 50%; 
-    height: 30%; 
+    /* Use relative dimensions to ensure the inner box is visible and flexible */
+    width: 60%; 
+    height: 40%; 
+    margin: 0; /* Remove potential original margins from .inner */
 }
 
-/* --- 2. Top Section: .right (Yellow container with Green inner) --- */
-/*
-   Requirement: The text in this green bordered div (.right .inner) should be organized
-   to the top right corner, but should be aligned to the left. Also, the text color
-   should be changed from green to purple.
-*/
-
-/* Making .right a flex container to position its .inner child */
+/* --- 3. Top-Right Corner Positioning (.right - Yellow Box, Green Inner) --- */
+/* REQUIREMENT: Green inner box (.inner) organized to the top right corner, text aligned to the left, color purple. */
 .right {
     display: flex;
-    /* Pushes content (.inner) to the top */
-    align-items: flex-start; 
-    /* Pushes content (.inner) to the right */
-    justify-content: flex-end; 
-    flex-grow: 1;
+    align-items: flex-start; /* Pushes content (.inner) to the top */
+    justify-content: flex-end; /* Pushes content (.inner) to the right */
+    
+    /* Need to set flex-shrink to 0 to prevent the .right box from collapsing 
+       if the viewport is too small, as it has a larger height than .left */
+    flex-shrink: 0; 
 }
 
-/* 2b. Align the text and change color */
 .right .inner {
-    color: purple; /* Change text color to purple */
-    text-align: left; /* Align text within the block to the left */
+    color: purple; /* Text color change */
+    text-align: left; /* Text alignment */
     padding: 10px;
-    width: 70%; 
-    height: 20%; 
-}
-
-/* --- 3. Bottom Section: Two .center containers (Red Boxes) --- */
-/*
-   Requirement: The two red boxes should be positioned next to each other in one row!
-   Requirement: The blue bordered div (.center .inner) should be centered horizontally
-   and vertically within the container div (.center). Also, the text itself should be
-   aligned to the center as well as organized to the center.
-*/
-
-/* Each .center is the red box container */
-.center {
-    /* The original .center has margin: 5% (which is responsive) */
-    
-    /* Make the .center container use Flexbox for internal centering */
-    display: flex; 
-    justify-content: center; /* Center .inner on the main axis (horizontal) */
-    align-items: center; /* Center .inner on the cross axis (vertical) */
-    
-    /* Use flex-grow to make them share the wrapper space evenly */
-    flex-grow: 1; 
-    /* The original .center width: 50% is not needed if using flex-grow: 1, 
-       but we keep the original margin: 5% which is a percentage. */
-}
-
-/* The .center .inner is the blue bordered div that needs to be centered */
-.center .inner {
-    /* Overwrite original margin */
+    width: 70%;
+    height: 30%;
     margin: 0; 
+}
+
+/* --- 4. Bottom Center Positioning (.center - Red Box, Blue Inner) --- */
+/* REQUIREMENT: Blue inner box (.inner) horizontally and vertically centered within the red box (.center). Text is also centered. */
+
+/* .center is the red box container and acts as the Flex container for internal centering */
+.center {
+    display: flex; 
+    justify-content: center; /* Center .inner horizontally */
+    align-items: center; /* Center .inner vertically */
     
-    /* Use a relative width/height to ensure the box scales with the browser */
+    /* Ensure the two .center boxes fit in the row while respecting margin: 5% */
+    flex-grow: 1; 
+    flex-shrink: 1; 
+}
+
+/* .center .inner is the blue bordered box and acts as the Flex container for text centering */
+.center .inner {
+    /* Use relative dimensions to ensure the blue box is centered and responsive */
     width: 80%; 
-    height: 80%;
+    height: 60%;
+    margin: 0; /* Important: Override original margin to allow perfect centering */
     
-    /* Center the text content within the blue bordered div */
     display: flex; 
     justify-content: center; /* Center text horizontally */
     align-items: center; /* Center text vertically */
-    text-align: center; /* Center text within the block */
+    text-align: center; 
     
-    /* Ensure text color is visible against the red background of .center */
     color: white; 
 }
 
