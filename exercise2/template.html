@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 2: HTML & CSS - Box Positioning</title>
+    <!-- style is injected into the HTML file within the style tags -->
+    <style>
+      /* original style declarations; DO NOT modify this otherwise you are going to penalized */
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        width: 100%;
+        margin: 0px;
+        background-color: #f1f1f1;
+      }
+
+      .wrapper {
+        overflow: hidden;
+      }
+
+      .left {
+        width: 45%;
+        height: 350px;
+        background: green;
+        text-align: left;
+        overflow: hidden;
+      }
+
+      .right {
+        width: 45%;
+        height: 650px;
+        background: yellow;
+        color: black;
+        text-align: right;
+      }
+
+      .center {
+        margin: 5%;
+        height: 250px;
+        background-color: red;
+        color: white;
+      }
+
+      .inner {
+        width: 450px;
+        height: 150px;
+      }
+
+      .left .inner {
+        border: 2px solid yellow;
+        color: yellow;
+      }
+
+      .right .inner {
+        border: 2px solid green;
+        color: green;
+      }
+
+      .center .inner {
+        border: 2px solid blue;
+      }
+      /* add/modify your css properties below this line */
+
+    /* add/modify your css properties below this line */
+
+/* --- Global Flex Setup for .wrapper Containers --- */
+/* This makes the pairs of boxes (.left/.right and two .center boxes) stand side-by-side */
+/* add/modify your css properties below this line */
+
+/* --- Global Flex Setup for .wrapper Containers --- */
+/* Makes the top and bottom boxes stand side-by-side */
+.wrapper {
+    display: flex;
+    /* Allows items to take up available space vertically within the wrapper */
+    align-items: stretch; 
+    width: 100%;
+}
+
+/* --- 1. Top Section: .left (Green container with Yellow inner) --- */
+/*
+   Requirement: The yellow bordered div (.left .inner) should be aligned to the right and
+   bottom of the div (.left).
+*/
+
+/* Making .left a flex container to position its .inner child */
+.left {
+    display: flex;
+    /* Pushes content (.inner) to the bottom */
+    align-items: flex-end; 
+    /* Pushes content (.inner) to the right */
+    justify-content: flex-end; 
+    /* Ensure .left takes up roughly the same width as .right in the row */
+    flex-grow: 1;
+}
+
+/* 1b. Align the text within the yellow bordered div */
+.left .inner {
+    text-align: right;
+    padding: 10px;
+    /* Use a relative width to ensure the box scales with the browser */
+    width: 50%; 
+    height: 30%; 
+}
+
+/* --- 2. Top Section: .right (Yellow container with Green inner) --- */
+/*
+   Requirement: The text in this green bordered div (.right .inner) should be organized
+   to the top right corner, but should be aligned to the left. Also, the text color
+   should be changed from green to purple.
+*/
+
+/* Making .right a flex container to position its .inner child */
+.right {
+    display: flex;
+    /* Pushes content (.inner) to the top */
+    align-items: flex-start; 
+    /* Pushes content (.inner) to the right */
+    justify-content: flex-end; 
+    flex-grow: 1;
+}
+
+/* 2b. Align the text and change color */
+.right .inner {
+    color: purple; /* Change text color to purple */
+    text-align: left; /* Align text within the block to the left */
+    padding: 10px;
+    width: 70%; 
+    height: 20%; 
+}
+
+/* --- 3. Bottom Section: Two .center containers (Red Boxes) --- */
+/*
+   Requirement: The two red boxes should be positioned next to each other in one row!
+   Requirement: The blue bordered div (.center .inner) should be centered horizontally
+   and vertically within the container div (.center). Also, the text itself should be
+   aligned to the center as well as organized to the center.
+*/
+
+/* Each .center is the red box container */
+.center {
+    /* The original .center has margin: 5% (which is responsive) */
+    
+    /* Make the .center container use Flexbox for internal centering */
+    display: flex; 
+    justify-content: center; /* Center .inner on the main axis (horizontal) */
+    align-items: center; /* Center .inner on the cross axis (vertical) */
+    
+    /* Use flex-grow to make them share the wrapper space evenly */
+    flex-grow: 1; 
+    /* The original .center width: 50% is not needed if using flex-grow: 1, 
+       but we keep the original margin: 5% which is a percentage. */
+}
+
+/* The .center .inner is the blue bordered div that needs to be centered */
+.center .inner {
+    /* Overwrite original margin */
+    margin: 0; 
+    
+    /* Use a relative width/height to ensure the box scales with the browser */
+    width: 80%; 
+    height: 80%;
+    
+    /* Center the text content within the blue bordered div */
+    display: flex; 
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    text-align: center; /* Center text within the block */
+    
+    /* Ensure text color is visible against the red background of .center */
+    color: white; 
+}
+
+    </style>
+  </head>
+  <body>
+    <!-- you do not need to modify the HTML content here -->
+    <div class="wrapper">
+      <div class="left">
+        <div class="inner">
+          The text in the yellow bordered div should be aligned to the right and
+          bottom of the div. The yellow bordered div should also be aligned to
+          the bottom right corner of the blue background div.
+        </div>
+      </div>
+      <div class="right">
+        <div class="inner">
+          The text in this green bordered div should be organized to the top
+          right corner, but should be aligned to the left. Also, the text color
+          should be changed from green to purple.
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="center">
+        <div class="inner">
+          The blue bordered div (that contains this text) should be centered
+          horizontally and vertically within the container div. Also, the text
+          itself should be aligned to the center as well as organized to the
+          center horizontally and vertically as well. The two red boxes should
+          be positioned next to each other in one row!
+        </div>
+      </div>
+      <div class="center">
+        <div class="inner">
+          The blue bordered div (that contains this text) should be centered
+          horizontally and vertically within the container div. Also, the text
+          itself should be aligned to the center as well as organized to the
+          center horizontally and vertically as well. The two red boxes should
+          be positioned next to each other in one row!
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
