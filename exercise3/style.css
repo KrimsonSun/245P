@@ -1,3 +1,9 @@
+/* FIX: Ensures padding and border are included in the element's total width/height. 
+   This is the standard fix for layout issues caused by scrollbars. */
+* {
+    box-sizing: border-box; 
+}
+
 /* Ensure HTML5 elements render correctly in older browsers */
 header,
 section,
@@ -21,7 +27,6 @@ img {
 body {
     color: #333333; /* Dark Ink text */
     background-color: #f7f7f5; /* Off-white / Very light beige paper color */
-    /* You could link to a subtle paper texture image here */
     background-image: none; 
     background-position: center;
     font-family: Georgia, 'Times New Roman', serif; /* Classic, readable serif font */
@@ -42,9 +47,16 @@ body {
 /* Header Styles */
 header {
     height: 160px;
-    /* Assume header.jpg is now a sepia-toned or black & white image */
-    background-image: url(images/header.jpg); 
-    /* Heavy border separating header from content */
+    background-image: url(images/awge_logo.jpg); 
+    
+    
+
+    background-size: cover;      
+    
+   
+    background-position: center center; 
+    
+    
     border-bottom: 5px double #5A4A3E; 
 }
 
@@ -110,6 +122,13 @@ article {
     padding: 20px;
     margin: 0;
 }
+/* fix the position of p label so it wont stack on the picture.*/
+article p {
+    
+    margin-left: 340px; 
+    padding-right: 20px;
+    margin-top: 0;
+}
 
 hgroup {
     margin-top: 20px;
@@ -171,7 +190,6 @@ h2 {
     margin: 10px 0px 5px 0px;
     padding: 0px;
     color: #5A4A3E; /* H2: Deep brown ink */
-    /* Removed all neon shadows */
 }
 
 h3 {
