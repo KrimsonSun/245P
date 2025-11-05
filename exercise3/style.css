@@ -1,0 +1,200 @@
+/* Ensure HTML5 elements render correctly in older browsers */
+header,
+section,
+footer,
+aside,
+nav,
+article,
+figure,
+figcaption {
+    display: block;
+}
+
+/* Fluid Images Rule (Retained) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Global Styles - Vintage Ink & Paper Aesthetic */
+body {
+    color: #333333; /* Dark Ink text */
+    background-color: #f7f7f5; /* Off-white / Very light beige paper color */
+    /* You could link to a subtle paper texture image here */
+    background-image: none; 
+    background-position: center;
+    font-family: Georgia, 'Times New Roman', serif; /* Classic, readable serif font */
+    line-height: 1.5em; 
+    margin: 0px;
+}
+
+.wrapper {
+    max-width: 940px;
+    width: 90%;
+    margin: 30px auto 30px auto;
+    /* Thick, heavy border mimicking old print */
+    border: 3px solid #5A4A3E; /* Deep brown/ink border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle drop shadow for depth */
+    background-color: #ffffff; /* Pure white content area for contrast */
+}
+
+/* Header Styles */
+header {
+    height: 160px;
+    /* Assume header.jpg is now a sepia-toned or black & white image */
+    background-image: url(images/header.jpg); 
+    /* Heavy border separating header from content */
+    border-bottom: 5px double #5A4A3E; 
+}
+
+h1 {
+    /* Retained for image logo */
+    text-indent: -9999px;
+    width: 940px;
+    height: 130px;
+    margin: 0px;
+}
+
+/* Navigation & Footer Styles */
+nav,
+footer {
+    clear: both;
+    color: #ffffff; /* White text on dark background */
+    background-color: #5A4A3E; /* Dark brown/ink navigation bar */
+    height: 40px;
+    /* Simplified border */
+    border-top: none; 
+}
+
+nav ul {
+    margin: 0px;
+    padding: 10px 0px 5px 30px;
+}
+
+nav li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav li a {
+    color: #ffffff; 
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav li a:hover,
+nav li a.current {
+    color: #C7A76A; /* Vintage Gold/Yellow-Brown highlight */
+    background-color: #4C3C30; /* Darker background on hover */
+    padding: 5px 10px;
+    margin: -5px -10px; /* Use padding/margin to create a button feel */
+}
+
+/* Main Content Area */
+section.featured-content { 
+    float: left;
+    width: 70%;
+    /* Subtle line separator */
+    border-right: 1px dotted #A08C75; 
+    padding: 20px 0;
+}
+
+article {
+    clear: both;
+    overflow: auto;
+    width: 100%;
+    /* Simplified article separator */
+    border-bottom: 1px solid #E0E0E0; 
+    padding: 20px;
+    margin: 0;
+}
+
+hgroup {
+    margin-top: 20px;
+}
+
+figure {
+    float: left;
+    width: 280px; 
+    height: 220px;
+    padding: 5px;
+    margin: 20px 20px 20px 0px;
+    /* Vintage photo border look */
+    border: 5px solid #EAEAEA; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+figcaption {
+    font-size: 90%;
+    text-align: left;
+    color: #666666;
+    font-style: italic; /* Italic for caption feel */
+}
+
+/* Sidebar Styles */
+aside {
+    width: 24%;
+    float: left;
+    padding: 20px 0px 20px 20px;
+}
+
+aside section a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #E0E0E0;
+    color: #333333;
+}
+
+aside section a:hover {
+    color: #5A4A3E; /* Hover to dark brown ink color */
+    background-color: #f0f0f0;
+}
+
+/* Text Elements */
+a {
+    color: #A08C75; /* Link color: Brown/Sepia tone */
+    text-decoration: underline; /* Standard underline for a classic web feel */
+}
+
+h1,
+h2,
+h3 {
+    font-weight: bold;
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    margin: 10px 0px 5px 0px;
+    padding: 0px;
+    color: #5A4A3E; /* H2: Deep brown ink */
+    /* Removed all neon shadows */
+}
+
+h3 {
+    margin: 0px 0px 10px 0px;
+    color: #A08C75; /* Subtitle: Sepia tone */
+    font-size: 1.1em;
+    font-style: italic;
+    letter-spacing: normal;
+}
+
+aside h2 {
+    padding: 10px 0px 10px 0px;
+    color: #5A4A3E; /* Sidebar H2: Deep brown */
+    border-bottom: 2px solid #A08C75; /* Sepia separator */
+    margin-bottom: 10px;
+    text-transform: none; /* Keep sidebar H2 less aggressive */
+}
+
+/* Footer */
+footer {
+    font-size: 80%;
+    padding: 7px 0px 0px 20px;
+    color: #AAAAAA;
+    letter-spacing: 1px;
+    background-color: #f0f0f0; /* Light grey footer */
+}
