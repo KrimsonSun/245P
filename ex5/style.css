@@ -1,0 +1,28 @@
+.tabs {
+  display: flex;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.tabs__sidebar {
+  width: 200px;
+  flex-shrink: 0;
+  background: #cccccc;
+}
+
+.tabs__button {
+  display: block;
+  outline: none;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  background: #cfcfcf;
+  border-bottom: 1px solid darkgray;
+  cursor: pointer;
+}
+
+.tabs__content {
+  display: none;
+  border: 1px solid red;
+  width: 100%;
+}
