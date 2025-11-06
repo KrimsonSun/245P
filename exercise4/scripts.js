@@ -49,3 +49,27 @@ function printWithoutOrwellAndMelville() {
 // You can call them directly in your script to see the output when the page loads
 printWithoutOrwell();
 printWithoutOrwellAndMelville();
+
+//-----Part2 Func;
+
+function changeColor() {
+  // 1. Find the element on the page using its ID
+  const contentElement = document.getElementById("content");
+
+  // 2. Change its 'style' property
+  // We set the 'color' style property to 'blue'
+  contentElement.style.color = "blue";
+}
+
+/**
+ * Challenge 2: Update inner HTML content
+ * This function is called by the button's 'onclick' attribute.
+ */
+function updateContent() {
+  // 1. Find the same element again
+  const contentElement = document.getElementById("content");
+
+  // 2. Change its 'innerHTML' property
+  // This replaces whatever is inside the <div> tag
+  contentElement.innerHTML = "Bye-Bye World!";
+}
