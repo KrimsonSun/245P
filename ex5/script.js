@@ -1,5 +1,7 @@
 
-
+document.addEventListener("DOMContentLoaded", () => {
+  setupTabs();
+});
 
 function setupTabs() {
   document.querySelectorAll(".tabs__button").forEach((button) => {

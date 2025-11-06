@@ -26,3 +26,15 @@
   border: 1px solid red;
   width: 100%;
 }
+.tabs__button--active {
+   display : block; /* This rule is redundant but included as per instructions */
+   background-color : red; 
+}
+
+/* Modifier class for the active content pane.
+  This makes the content visible.
+*/
+.tabs__content--active {
+   display : block;
+   background : green; 
+}
