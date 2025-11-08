@@ -1,0 +1,90 @@
+/* --- Basic Reset and Page Layout --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5;
+  /* Use Grid to easily center everything */
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* --- Carousel Container (The "Window") --- */
+.carousel {
+  display: block;
+  position: relative; /* For absolutely positioning the buttons */
+  margin: 0 auto;
+  width: 600px; /* REVERTED: Back to 600px per assignment */
+  overflow: hidden; /* KEY: Hides content outside the container */
+  
+  /* Extra Credit: Rounded corners */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Slide Container (The "Film Strip") --- */
+.slide__container {
+  display: inline-flex; /* Arranges images horizontally */
+  white-space: nowrap; /* Prevents images from wrapping */
+  position: relative;
+  
+  height: 300px; /* REVERTED: Back to 300px per assignment */
+}
+
+/* --- Image Styling --- */
+img {
+  display: block; /* Removes extra space at the bottom of images */
+  object-fit: cover; /* KEY: Crops image to fit container without distortion */
+  width: 600px;  /* REVERTED: Back to 600px per assignment */
+  height: 600px; /* REVERTED: Back to 600px per assignment (this is intentionally taller than the container) */
+}
+
+/* --- Button Styling (Extra Credit) --- */
+#prevButton,
+#nextButton {
+  position: absolute; /* Positioned relative to .carousel */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically centered */
+  
+  z-index: 10; /* Ensures buttons are on top of the images */
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#prevButton:hover,
+#nextButton:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#prevButton:active,
+#nextButton:active {
+  transform: translateY(-50%) scale(0.9); /* "Press" effect on click */
+}
+
+#prevButton {
+  left: 16px;
+}
+
+#nextButton {
+  right: 16px;
+}
