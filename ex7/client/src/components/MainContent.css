@@ -1,0 +1,9 @@
+.main {
+  margin-left: 200px; /* Same as the width of the sidebar */
+  padding: 20px 10px;
+  font-size: 18px;
+
+  /* Add padding to account for the fixed header and footer */
+  padding-top: 70px; /* Must be >= sidebar's 'top' value */
+  padding-bottom: 60px; /* Space for the 60px tall footer */
+}
