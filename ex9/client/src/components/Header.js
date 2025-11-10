@@ -1,15 +1,16 @@
 import "./Header.css";
-
+import { Link } from "react-router-dom";
+import React from 'react';
 function Header() {
   return (
     <>
       <div className="header">
-        <a href="#default" className="logo">
+        <Link to="/" className="logo">
           ✨ Starlight Studio
-        </a>
+        </Link>
         <div className="headerRight">
-          <a className="active" href="#home">HOME</a>
-        <a href="https://github.com/KrimsonSun?tab=repositories">GitRepository</a>
+          <Link to="/" className="active">HOME</Link>
+            <a href="https://github.com/KrimsonSun?tab=repositories">GitRepository</a>
         
         </div>
       </div>

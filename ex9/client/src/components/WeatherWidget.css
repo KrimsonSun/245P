@@ -1,0 +1,83 @@
+/* src/components/WeatherWidget.css */
+
+.weather-container {
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.weather-container.loading,
+.weather-container.error {
+  background-color: #f8f8f8;
+  color: #555;
+}
+
+.weather-container.error {
+  background-color: #fff0f0;
+  border-color: #d9534f;
+  color: #d9534f;
+}
+
+.weather-container h1 {
+  font-size: 1.8em; /* 调小一点，使其更像一个小部件 */
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.weather-description {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #3498db;
+  text-transform: capitalize;
+  margin: 15px 0;
+}
+
+.weather-details p {
+  font-size: 1em;
+  color: #34495e;
+  margin: 8px 0;
+}
+
+.temp-current {
+  font-size: 2em !important;
+  font-weight: bold;
+  color: #000;
+  margin: 10px 0;
+}
+
+.temp-range {
+  color: #7f8c8d;
+}
+/*
+  CSS for React Transition Group
+  (Add this to index.css or App.css)
+*/
+
+/* 1. Start state for "entering" element (transparent) */
+.fade-enter {
+  opacity: 0;
+}
+
+/* 2. Active state for "entering" element (fades in) */
+.fade-enter-active {
+  opacity: 1;
+  /* Must match the 'timeout' prop in <CSSTransition> */
+  transition: opacity 300ms ease-in;
+}
+
+/* 3. Start state for "exiting" element (visible) */
+.fade-exit {
+  opacity: 1;
+}
+
+/* 4. Active state for "exiting" element (fades out) */
+.fade-exit-active {
+  opacity: 0;
+  /* Must match the 'timeout' prop in <CSSTransition> */
+  transition: opacity 300ms ease-out;
+}

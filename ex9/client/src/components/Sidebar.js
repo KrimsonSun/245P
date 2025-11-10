@@ -1,13 +1,13 @@
 import React from 'react';
 import './Sidebar.css';
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
     <div className="sidenav">
-      <a href="#services">Services</a>
-      <a href="#clients">Clients</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      
+      <Link to="/">Home</Link>
+      <Link to="serviceview">Services</Link>
     </div>
   );
 }
