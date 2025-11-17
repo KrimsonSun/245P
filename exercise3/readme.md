@@ -20,6 +20,9 @@ Goal: To ensure the fixed-width layout scales appropriately on smaller screens.
 
 Simulation:Use the browser's developer tools to reduce the viewport width from $1200\text{px}$ down to $500\text{px}$.Verify that the .wrapper's rules (width: 90% and max-width: 940px) take effect correctly, and that images (max-width: 100%) do not overflow the page boundaries.
 
+
+
+
 ## C. Update Style
 The work primarily involved the following CSS adjustments:
 
