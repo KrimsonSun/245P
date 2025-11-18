@@ -9,8 +9,8 @@ class Particle {
     this.y += random(-5, 5);
   }
   show() {
-    stroke(255);
-    strokeWeight(25);
+    stroke(255);//set color
+    strokeWeight(25); // width , pixel.
     point(this.x, this.y);
   }
 }
