@@ -2,6 +2,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   setupTabs();
 });
+//DOMContentLoaded: when the html finished load this event will happen.
+
 
 function setupTabs() {
   document.querySelectorAll(".tabs__button").forEach((button) => {

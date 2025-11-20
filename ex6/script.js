@@ -2,10 +2,11 @@
 
 // Get the container that holds all the images
 let slideContainer = document.querySelector(".slide__container");
+//querySelector, select element by class
 
 // Get all images (including the clones)
 // This creates a NodeList (like an array) of all <img> tags inside .slide__container
-let images = document.querySelectorAll(".slide__container img");
+let images = document.querySelectorAll(".slide__container img"); 
 
 // Get the navigation buttons
 let prevButton = document.querySelector("#prevButton");
